@@ -1,6 +1,7 @@
 import {
   ADDED,
   ALLCOMPLETED,
+  CLEARCOMPLETED,
   COLORSELECTED,
   DELETED,
   TOGGLED,
@@ -44,7 +45,15 @@ const reducer = (state = initialState, action) => {
       return state.filter((todo) => todo.id !== action.payload);
 
     case ALLCOMPLETED:
-      return state.filter((todo) => todo.id !== todoId);
+      return state.map((todo) => {
+        return {
+          ...todo,
+          completed: true,
+        };
+      });
+
+    case CLEARCOMPLETED:
+      return state.filter((todo) => !todo.completed);
 
     default:
       return state;
