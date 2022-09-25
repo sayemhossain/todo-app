@@ -2,6 +2,7 @@ import "./App.css";
 import notes from "./img/notes.png";
 import doubleTick from "./img/double-tick.png";
 import cancel from "./img/cancel.png";
+import plusImage from "./img/plus.png";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
             />
             <button
               type="submit"
-              className="appearance-none w-8 h-8 bg-[url('./img/plus.png')] bg-no-repeat bg-contain"
+              className={`appearance-none w-8 h-8 bg-[url('${plusImage}')] bg-no-repeat bg-contain`}
             ></button>
           </form>
 
