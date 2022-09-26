@@ -17,6 +17,12 @@ const reducer = (state = initialState, action) => {
             colors: [...state.colors, color],
           };
         case "removed":
+          return {
+            ...state,
+            colors: state.colors.filter(
+              (existingCoolor) => existingCoolor !== color
+            ),
+          };
 
         default:
           break;
